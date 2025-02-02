@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block content %}
+<div class="row">
+  <div class="col-md-8 col-sm-10 col-12">
+    <h2>Sign up</h2>
+    <form method="post" novalidate>
+      {% csrf_token %}
+      <input type="hidden" name="next" value="?next?" />
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-success btn-block">Sign up</button>
+      <a href="{% url 'login' %}"
+        ><button type="button" class="btn btn-secondary btn-block">
+          Back to Home
+        </button></a
+      >
+    </form>
+  </div>
+</div>
+{% endblock %}

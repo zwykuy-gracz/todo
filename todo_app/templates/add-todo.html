@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% load static %}
+<!-- prettier-ignore -->
+{% block title %}Add Todo{% endblock title %}
+{% block content %}
+<div class="container">
+  <div class="text-center text-light my-4">
+    <form action="" method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit" class="updatebtn">Submit</button>
+    </form>
+    <a href="{% url 'todo-list' %}"
+      ><button type="button" class="homebtn">Back to Home</button></a
+    >
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %} {% load static %}
+
+<!-- prettier-ignore -->
+{% block title %} Task details {% endblock title %}
+{% block extrahead %}
+<link rel="stylesheet" href="{% static 'css/details.css' %}" />
+{% endblock extrahead %} {% block content %}
+<div class="container">
+  <div class="text-center text-dark my-4">
+    <a href="{% url 'todo-list' %}"
+      ><button type="button" class="homebtn">Back to Home</button></a
+    >
+    <h1>{{task.task}}</h1>
+    <p>{{task.comment|linebreaks}}</p>
+    <p>{{task.deadline}}</p>
+    <p>{{task.status}}</p>
+    <p>{{task.duration_lvl.duration}}-term</p>
+    <div class="clearfix">
+      <form action="{% url 'task-edit' task.pk %}" method="get">
+        <button type="submit" class="updatebtn">Update</button>
+      </form>
+      <form method="POST" action="{% url 'task-delete' task.pk %}">
+        {% csrf_token %}
+        <button
+          class="deletebtn show-form-delete"
+          type="submit"
+          value="DELETE"
+          onclick="return confirm('Are you sure do you want to delete {{task.task}}')"
+        >
+          <i class="fa fa-trash-o"></i>
+          Delete
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}
