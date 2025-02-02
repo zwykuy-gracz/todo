@@ -1,12 +1,17 @@
 body {
-  background-color: #f5f4f5;
+  /* background-color: #f5f4f5; */
+  background-color: #151515;
   margin-top: 20px;
 }
 
 /* Tr Job Post */
 
+.todo-content {
+  color: #eaeaea;
+}
+
 .job-item {
-  background-color: #fff;
+  background-color: #8b8989;
 }
 
 .job-tab .nav-tabs {
@@ -302,4 +307,78 @@ body {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.post-controls {
+  margin-top: 10px;
+}
+
+.post-controls a {
+  margin-right: 10px;
+  color: #777; /* A lighter color for controls */
+  text-decoration: none;
+}
+
+.post-controls a:hover {
+  color: #1ee092;
+  text-decoration: underline;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  width: 100%;
+}
+
+.nav-left,
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-left a {
+  margin-right: 15px; /* Space between Home and New Post */
+}
+
+.nav-right > * {
+  margin-left: 15px; /* Space between items on the right */
+}
+
+/* If you want to adjust the form and span appearance */
+.nav-right form {
+  margin: 0; /* Remove default margin from form */
+}
+
+.nav-right button {
+  background: none;
+  border: none;
+  color: #555;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.nav-right button:hover {
+  color: #000;
+  background-color: #d0d0d0;
+}
+
+.nav-right span {
+  color: #555;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal,
+    monospace;
+  color: #03a062;
+  letter-spacing: -0.03em;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(181, 232, 83, 0.1),
+    0 0 10px rgba(181, 232, 83, 0.1);
 }

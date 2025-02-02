@@ -2,15 +2,6 @@
 <!-- prettier-ignore -->
 {% block content %}
 <div class="container">
-  Hello {{user.username}}
-  <form method="post" action="{% url 'logout' %}">
-    {% csrf_token %}
-    <button type="submit">logout</button>
-  </form>
-  <a href="{% url 'add-todo' %}" class="pull-right">
-    <button class="btn btn-primary" type="button">Add New ToDo</button></a
-  >
-
   <div class="tr-job-posted section-padding">
     <div class="container">
       <div class="job-tab text-center">
@@ -67,7 +58,11 @@
                           Edit</a
                         >
                         <span class="tr-title">
-                          <a href="#">{{todo.task}}</a>
+                          <a
+                            href="{% url 'task-details' todo.pk %}"
+                            class="btn btn-primary"
+                            >{{todo.task}}</a
+                          >
                         </span>
                         <ul class="tr-list job-meta">
                           {% if todo.comment %}
@@ -144,7 +139,11 @@
                           >Edit</a
                         >
                         <span class="tr-title">
-                          <a href="#">{{todo.task}}</a>
+                          <a
+                            href="{% url 'task-details' todo.pk %}"
+                            class="btn btn-primary"
+                            >{{todo.task}}</a
+                          >
                         </span>
                         <ul class="tr-list job-meta">
                           {% if todo.comment %}
@@ -213,7 +212,11 @@
                           >Edit</a
                         >
                         <span class="tr-title">
-                          <a href="#">{{todo.task}}</a>
+                          <a
+                            href="{% url 'task-details' todo.pk %}"
+                            class="btn btn-primary"
+                            >{{todo.task}}</a
+                          >
                         </span>
                         <ul class="tr-list job-meta">
                           {% if todo.comment %}

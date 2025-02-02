@@ -22,10 +22,38 @@
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       rel="stylesheet"
     />
+    {% comment %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    {% endcomment %}
     <link rel="stylesheet" href="{% static 'css/styles-test.css' %}" />
   </head>
   <body>
+    <header>
+      <nav class="post-controls nav-container">
+        <div class="nav-left">
+          <a href="{% url 'todo-list' %}">Home</a>
+          {% if user.is_authenticated %}
+          <a href="{% url 'add-todo' %}">New Todo</a>
+          {% endif %}
+        </div>
+        <div class="nav-right">
+          {% if user.is_authenticated %}
+          <form
+            action="{% url 'logout' %}"
+            method="post"
+            style="display: inline"
+          >
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+          </form>
+          <span>Hi, {{ user.username }}!</span>
+          {% else %}
+          <a href="{% url 'login' %}">Login</a>
+          <a href="{% url 'signup' %}">Register</a>
+          {% endif %}
+        </div>
+      </nav>
+    </header>
     {% block content %}{% endblock %}
   </body>
   <!-- Bootstrap JS -->

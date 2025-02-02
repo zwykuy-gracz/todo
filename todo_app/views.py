@@ -1,6 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import (
     CreateView,
     ListView,
@@ -96,6 +96,16 @@ class TaskDeleteView(DeleteView):
 
     def get_success_url(self):
         return reverse("todo-list")
+
+
+@login_required
+def post_delete(request, pk):
+    task = get_object_or_404(Task, pk=pk)
+    if task.owner == request.user:
+        task.delete()
+        return redirect("todo-list")
+    else:
+        return redirect("todo-list")
 
 
 class TasksList(generics.ListCreateAPIView):
