@@ -54,7 +54,9 @@
         </div>
       </nav>
     </header>
-    {% block content %}{% endblock %}
+    <div class="container">
+      <main class="main-content">{% block content %} {% endblock %}</main>
+    </div>
   </body>
   <!-- Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>

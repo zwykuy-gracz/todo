@@ -1,10 +1,20 @@
 body {
-  /* background-color: #f5f4f5; */
-  background-color: #151515;
-  margin-top: 20px;
+  margin: 0;
+  padding: 0;
+  background: #151515 url("../assets/bkg.png") 0 0;
+  color: #eaeaea;
+  font-size: 16px;
+  line-height: 1.5;
+  font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal,
+    monospace;
 }
 
-/* Tr Job Post */
+header {
+  background: rgba(0, 0, 0, 0.1);
+  border-bottom: 1px dashed #03a062;
+  padding: 20px;
+  margin: 0 0 40px 0;
+}
 
 .todo-content {
   color: #eaeaea;
