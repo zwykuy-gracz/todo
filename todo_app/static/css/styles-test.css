@@ -21,7 +21,7 @@ header {
 }
 
 .job-item {
-  background-color: #8b8989;
+  background-color: #3f3f3f;
 }
 
 .job-tab .nav-tabs {
@@ -74,7 +74,7 @@ header {
 .job-tab .nav-tabs > li > a.active:hover,
 .job-tab .nav-tabs > li > a:hover {
   border: none;
-  background-color: #008def;
+  background-color: #03a062;
   color: #fff;
 }
 
@@ -114,7 +114,7 @@ header {
 }
 
 .job-info .tr-title a:hover {
-  color: #008def;
+  color: #03a062;
 }
 
 .job-info ul {
@@ -123,11 +123,11 @@ header {
 
 .job-meta li,
 .job-meta li a {
-  color: #646464;
+  color: #eaeaea;
 }
 
 .job-meta li a:hover {
-  color: #008def;
+  color: #03a062;
 }
 
 .job-meta li {
@@ -210,7 +210,7 @@ header {
   width: 100%;
   height: 100%;
   border-radius: 5px;
-  background-color: #008def;
+  background-color: #03a062;
   color: #fff;
   opacity: 0;
   -webkit-transition: all 800ms;
@@ -278,7 +278,7 @@ header {
 }
 
 .job-social li:last-child a i {
-  color: #008def;
+  color: #03a062;
 }
 
 .job-social li a:before {
@@ -290,7 +290,7 @@ header {
   height: 100%;
   z-index: -1;
   border-radius: 100%;
-  background-color: #008def;
+  background-color: #03a062;
   -webkit-transform: scale(0);
   -moz-transform: scale(0);
   -ms-transform: scale(0);
