@@ -8,10 +8,12 @@
 <div class="container">
   <div class="text-center text-dark my-4">
     <h1>{{task.task}}</h1>
-    <div class="todo-content">{{task.comment|linebreaks}}</div>
-    <p>{{task.deadline}}</p>
-    <p>{{task.status}}</p>
-    <p>{{task.duration_lvl.duration}}-term</p>
+    <div class="todo-content">
+      {{task.comment|linebreaks}}
+      <p>{{task.deadline}}</p>
+      <p>{{task.status}}</p>
+      <p>{{task.duration_lvl.duration}}-term</p>
+    </div>
     <div class="post-controls">
       {% if user.is_authenticated and user == task.owner %}
       <a href="{% url 'task-edit' task.pk %}">Edit</a> |

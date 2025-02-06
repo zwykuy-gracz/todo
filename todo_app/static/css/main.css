@@ -298,8 +298,11 @@ hr {
   color: #b5e853;
 }
 
-/* Buttons
-*/
+.tr-title {
+  background-color: #b5e853;
+  color: #d90b0b;
+}
+
 .btn {
   display: inline-block;
   background: -webkit-linear-gradient(
