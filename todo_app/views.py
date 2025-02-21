@@ -19,7 +19,6 @@ from .forms import TaskForm, UserSignUpForm
 
 
 class SignUpView(CreateView):
-    # model = User
     form_class = UserSignUpForm
     template_name = "registration/signup.html"
     success_url = reverse_lazy("todo-list")
@@ -31,28 +30,9 @@ class TodoListView(ListView):
     ordering = ("deadline",)
     context_object_name = "todo_list"
     template_name = "todo-list.html"
-    # task = Task.objects.get(id=2)
-    # print(task.objects)
-    # print(dir(task.status))
-    # print(task.__repr__)
-    # print(Task.objects.filter(duration_lvl=2).values())
 
     def get_queryset(self):
         return Task.objects.filter(owner=self.request.user)
-
-
-class TodoListViewTest(ListView):
-    model = Task
-    ordering = ("deadline",)
-    context_object_name = "todo_list"
-    template_name = "todo-list-test.html"
-    # task = Task.objects.get(id=2)
-    # print(task.duration_lvl)
-    # print(task.__repr__)
-    # print(Task.objects.filter(duration_lvl=2).values())
-
-    def get_queryset(self):
-        return Task.objects.all()
 
 
 @method_decorator([login_required], name="dispatch")

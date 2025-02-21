@@ -149,7 +149,7 @@
                           {% if todo.comment %}
                           <li>
                             <i class="fa fa-pen" aria-hidden="true"></i
-                            >{{todo.comment}}
+                            >{{todo.comment|linebreaks}}
                           </li>
                           {% endif %}
                           <li>
@@ -222,7 +222,7 @@
                           {% if todo.comment %}
                           <li>
                             <i class="fa fa-pen" aria-hidden="true"></i
-                            >{{todo.comment}}
+                            >{{todo.comment|linebreaks}}
                           </li>
                           {% endif %}
                           <li>
