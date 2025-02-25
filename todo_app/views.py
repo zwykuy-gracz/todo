@@ -88,6 +88,7 @@ def post_delete(request, pk):
         return redirect("todo-list")
 
 
+@method_decorator([login_required], name="dispatch")
 class TasksList(generics.ListCreateAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
