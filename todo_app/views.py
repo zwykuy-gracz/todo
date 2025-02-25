@@ -12,7 +12,7 @@ from django.forms.models import BaseModelForm
 from django.http import HttpResponse
 from django.urls import reverse_lazy, reverse
 from rest_framework import generics
-from .models import Task, TimeHorizon, TaskStatus
+from .models import Task, TimeHorizon, TaskStatus, Counter
 from .serializers import TaskSerializer, DurationSerializer, StatusSerializer
 
 from .forms import TaskForm, UserSignUpForm
@@ -26,6 +26,9 @@ class SignUpView(CreateView):
 
 @method_decorator([login_required], name="dispatch")
 class TodoListView(ListView):
+    counter = Counter.objects.get()
+    counter.number_of_visitations += 1
+    counter.save()
     model = Task
     ordering = ("deadline",)
     context_object_name = "todo_list"

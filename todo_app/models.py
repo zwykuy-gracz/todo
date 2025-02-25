@@ -50,3 +50,10 @@ class Task(models.Model):
 
     def __str__(self) -> str:
         return self.task
+
+
+class Counter(models.Model):
+    number_of_visitations = models.IntegerField(default=0)
+
+    def __str__(self):
+        return str(self.number_of_visitations)
